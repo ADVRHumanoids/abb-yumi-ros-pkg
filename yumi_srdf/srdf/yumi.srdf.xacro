@@ -3,25 +3,20 @@
     This is a format for representing semantic information about the robot structure.
     A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
 -->
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="bigman">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="yumi">
     
     <xacro:include filename="$(find yumi_urdf)/urdf/yumi_config.urdf.xacro" />
     
-    <virtual_joint name="virtual_joint" parent_frame="world" child_link="base_link" type="floating" /> 
-    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
-    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
-    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
-    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="base">
         <link name="yumi_body"/>
     </group>
        
     <group name="left_arm">
-        <chain base_link="yumi_link_1_l" tip_link="yumi_link_7_l"/>
+        <chain base_link="yumi_body" tip_link="yumi_link_7_l"/>
     </group>
     <group name="right_arm">
-        <chain base_link="yumi_link_1_r" tip_link="yumi_link_7_r"/>
+        <chain base_link="yumi_body" tip_link="yumi_link_7_r"/>
     </group>
 
 

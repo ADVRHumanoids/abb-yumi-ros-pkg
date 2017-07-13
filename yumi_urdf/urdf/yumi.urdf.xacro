@@ -10,10 +10,10 @@
   <xacro:include filename="$(find yumi_urdf)/urdf/yumi_fixed_gripper.xacro"/>
   
   <!-- Fix to world just for testing -->
-  <link name="world"/>
+  <link name="base_link"/>
 
-  <xacro:yumi name="yumi" parent="world">
-    <origin xyz="0 0 0.1" rpy="0 0 0" />
+  <xacro:yumi name="yumi" parent="base_link">
+    <origin xyz="0 0 0.0" rpy="0 0 0" />
   </xacro:yumi>
 
   <!--right gripper-->

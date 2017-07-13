@@ -1,8 +1,8 @@
 # YUMI config
 
 XBotInterface:
-  urdf_path: "robots/abb-yumi-ros-pkg/yumi_urdf/yumi.urdf"
-  srdf_path: "robots/abb-yumi-ros-pkg/yumi_srdf/yumi.srdf"
+  urdf_path: "robots/abb-yumi-ros-pkg/yumi_urdf/urdf/yumi.urdf"
+  srdf_path: "robots/abb-yumi-ros-pkg/yumi_srdf/srdf/yumi.srdf"
   joint_map_path: "robots/abb-yumi-ros-pkg/yumi_config/joint_map/yumi_ecat_joint_map.yaml"
 
 RobotInterface:
@@ -24,3 +24,8 @@ ModelInterfaceRBDL:
   subclass_name: "ModelInterfaceRBDL"
   path_to_shared_lib: "libModelInterfaceRBDL.so"
   subclass_factory_name: "model_interface_rbdl"
+
+RobotInterfaceDUMMY:
+  subclass_name: "RobotInterfaceDUMMY"
+  path_to_shared_lib: "libRobotInterfaceDUMMY.so"
+  subclass_factory_name: "robot_interface_dummy"

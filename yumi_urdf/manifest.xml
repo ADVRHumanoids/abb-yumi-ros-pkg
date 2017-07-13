@@ -1,7 +1,7 @@
 <package>
   <description brief="yumi_urdf">
 
-     yumi_urdf contains the urdf description and meshes of COGIMON
+     yumi_urdf
 
   </description>
   <author>Enrico Mingo Hoffman</author>
