@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot name="yumi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find yumi_urdf)/urdf/yumi_fixed_gripper.gazebo.xacro" />
+  <!-- Include Utilities -->
+  <xacro:include filename="$(find yumi_urdf)/urdf/utilities.xacro" />
+
+  <!-- some constants -->
+ <!-- <xacro:property name="safety_controller_k_pos" value="100" />
+  <xacro:property name="safety_controller_k_vel" value="2" /> -->
+  
+  <xacro:macro name="yumi_servo_gripper" params="parent name *origin">
+
+    <!--joint between {parent} and base-->
+    <joint name="${parent}_joint" type="fixed">
+      <insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="${name}_base"/>
+    </joint>
+
+    <link name="${name}_base">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.2"/>
+        <inertia ixx="0.0001"  ixy="0"  ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://yumi_urdf/meshes/gripper/base.stl"/>
+        </geometry>
+        <material name="Light_Grey"/>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://yumi_urdf/meshes/gripper/coarse/base.stl"/>
+        </geometry>
+        <material name="Light_Grey"/>
+      </collision>
+
+    </link>
+
+    <!-- joint between base and right finger -->
+    <joint name="${name}_joint" type="fixed">
+      <parent link="${name}_base"/>
+      <child link="${name}_finger_r"/>
+      <origin xyz="0 -0.0065 0.0837" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${name}_finger_r">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="0.000001"  ixy="0"  ixz="0" iyy="0.000001" iyz="0" izz="0.000001" />
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://yumi_urdf/meshes/gripper/finger.stl"/>
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://yumi_urdf/meshes/gripper/coarse/finger.stl"/>
+        </geometry>
+        <material name="Grey"/>
+      </collision>
+    </link>
+
+   <!-- joint between base and left finger -->
+    <joint name="${name}_joint_m" type="fixed">
+      <parent link="${name}_base"/>
+      <child link="${name}_finger_l"/>
+      <origin xyz="0 0.0065 0.0837" rpy="0 0 ${PI}"/>
+    </joint>
+
+    <link name="${name}_finger_l">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="0.000001"  ixy="0"  ixz="0" iyy="0.000001" iyz="0" izz="0.000001" />
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://yumi_urdf/meshes/gripper/finger.stl"/>
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://yumi_urdf/meshes/gripper/coarse/finger.stl"/>
+        </geometry>
+        <material name="Grey"/>
+      </collision>
+    </link>
+
+    
+  </xacro:macro>
+
+</robot>

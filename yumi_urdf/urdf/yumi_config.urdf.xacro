@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="YUMI">
+
+<xacro:property name="model_name" value="ABB YuMi" />
+<xacro:property name="model_version" value="0.1" />
+
+</robot>
+

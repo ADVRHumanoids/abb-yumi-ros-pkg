@@ -1,0 +1,15 @@
+<package>
+  <description brief="yumi_urdf">
+
+     yumi_urdf contains the urdf description and meshes of COGIMON
+
+  </description>
+  <author>Enrico Mingo Hoffman</author>
+  <license>BSD</license>
+  <version>13.11.08</version>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/yumi_urdf</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+
+</package>

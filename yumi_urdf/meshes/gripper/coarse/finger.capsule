@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/abb-yumi-ros-pkg/yumi_urdf/meshes/gripper/coarse/finger.stl">
+  <link name="1.00000_1.00000_1.00000">
+    <collision>
+      <origin xyz="-0.002226155 0.00714077 0.022516085" rpy="-0.0754494157045 -0.0392027804315 0.00147980466769"/>
+      <geometry>
+        <cylinder radius="0.0105247" length="0.0402995558024"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

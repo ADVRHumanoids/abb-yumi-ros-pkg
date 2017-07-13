@@ -1,0 +1,19 @@
+<package>
+  <description brief="yumi_gazebo">
+
+     
+
+  </description>
+  <author>Enrico Mingo Hoffman</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="bigman_urdf"/>
+  <depend package="xacro"/>
+  
+
+</package>
+
+

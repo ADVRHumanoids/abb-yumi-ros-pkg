@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="/home/enrico/advr-superbuild/robots/abb-yumi-ros-pkg/yumi_urdf/meshes/coarse/link_1.stl">
+  <link name="1.00000_1.00000_1.00000">
+    <collision>
+      <origin xyz="0.01321001 -0.0179301465 0.05118777" rpy="0.416331325258 0.289622159436 0.0615873574678"/>
+      <geometry>
+        <cylinder radius="0.0623123" length="0.0964367322873"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
