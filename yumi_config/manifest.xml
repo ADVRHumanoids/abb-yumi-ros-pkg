@@ -1,0 +1,15 @@
+<package>
+  <description brief="yumi_config">
+
+     yumi_config
+
+  </description>
+  <author>Enrico Mingo Hoffman</author>
+  <license>BSD</license>
+  <version>13.11.08</version>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/yumi_config</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+
+</package>
